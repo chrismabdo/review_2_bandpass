@@ -12,4 +12,8 @@ describe BandPass do
     it 'will return the soundwaves as an array' do
         expect(subject.alter_soundwave([50])).to eq [50]
     end
+
+    it 'will raise an error if the soundwave length < 1' do
+        expect { subject.alter_soundwave([])}.to raise_error "No Frequency Supplied."
+    end
 end
